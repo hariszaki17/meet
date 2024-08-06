@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  livekit-server:
+    image: livekit/livekit-server
+    container_name: livekit-server
+    ports:
+      - "7880:7880"
+      - "7881:7881"
+    environment:
+      LIVEKIT_API_KEY: devkey
+      LIVEKIT_API_SECRET: secret
+    command: ["--dev", "--bind", "0.0.0.0"]
+
+  nextjs-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nextjs-app
+    ports:
+      - "3000:3000"

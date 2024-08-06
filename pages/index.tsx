@@ -50,12 +50,12 @@ function DemoMeetingTab({ label }: { label: string }) {
   };
   return (
     <div className={styles.tabContent}>
-      <p style={{ margin: 0 }}>Try LiveKit Meet for free with our live demo project.</p>
+      <p style={{ margin: 0 }}>Hajar bosque meet-meetan</p>
       <button style={{ marginTop: '1rem' }} className="lk-button" onClick={startMeeting}>
         Start Meeting
       </button>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-        <div style={{ display: 'flex', flexDirection: 'row', gap: '1rem' }}>
+        {/* <div style={{ display: 'flex', flexDirection: 'row', gap: '1rem' }}>
           <input
             id="use-e2ee"
             type="checkbox"
@@ -63,7 +63,7 @@ function DemoMeetingTab({ label }: { label: string }) {
             onChange={(ev) => setE2ee(ev.target.checked)}
           ></input>
           <label htmlFor="use-e2ee">Enable end-to-end encryption</label>
-        </div>
+        </div> */}
         {e2ee && (
           <div style={{ display: 'flex', flexDirection: 'row', gap: '1rem' }}>
             <label htmlFor="passphrase">Passphrase</label>
@@ -175,7 +175,7 @@ const Home = ({ tabIndex }: InferGetServerSidePropsType<typeof getServerSideProp
     <>
       <main className={styles.main} data-lk-theme="default">
         <div className="header">
-          <img src="/images/livekit-meet-home.svg" alt="LiveKit Meet" width="360" height="45" />
+          {/* <img src="/images/livekit-meet-home.svg" alt="LiveKit Meet" width="360" height="45" />
           <h2>
             Open source video conferencing app built on{' '}
             <a href="https://github.com/livekit/components-js?ref=meet" rel="noopener">
@@ -186,14 +186,14 @@ const Home = ({ tabIndex }: InferGetServerSidePropsType<typeof getServerSideProp
               LiveKit&nbsp;Cloud
             </a>{' '}
             and Next.js.
-          </h2>
+          </h2> */}
         </div>
-        <Tabs selectedIndex={tabIndex} onTabSelected={onTabSelected}>
+        {/* <Tabs selectedIndex={tabIndex} onTabSelected={onTabSelected}> */}
           <DemoMeetingTab label="Demo" />
-          <CustomConnectionTab label="Custom" />
-        </Tabs>
+          {/* <CustomConnectionTab label="Custom" /> */}
+        {/* </Tabs> */}
       </main>
-      <footer data-lk-theme="default">
+      {/* <footer data-lk-theme="default">
         Hosted on{' '}
         <a href="https://livekit.io/cloud?ref=meet" rel="noopener">
           LiveKit Cloud
@@ -203,7 +203,7 @@ const Home = ({ tabIndex }: InferGetServerSidePropsType<typeof getServerSideProp
           GitHub
         </a>
         .
-      </footer>
+      </footer> */}
     </>
   );
 };
