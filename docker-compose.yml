@@ -2,15 +2,12 @@ version: '3.8'
 
 services:
   livekit-server:
-    image: livekit/livekit-server
+    image: hariszaki17/livekit:server-latest
     container_name: livekit-server
     ports:
       - "7880:7880"
       - "7881:7881"
-    environment:
-      LIVEKIT_API_KEY: devkey
-      LIVEKIT_API_SECRET: secret
-    command: ["--dev", "--bind", "0.0.0.0"]
+    command: ["--bind", "0.0.0.0"]
 
   nextjs-app:
     build:
