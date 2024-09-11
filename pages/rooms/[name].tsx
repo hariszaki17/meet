@@ -167,6 +167,13 @@ const ActiveRoom = ({ roomName, userChoices, onLeave }: ActiveRoomProps) => {
   const connectOptions = React.useMemo((): RoomConnectOptions => {
     return {
       autoSubscribe: true,
+      rtcConfig: {
+        iceServers:  [
+          {
+            urls: 'stun:stun.l.google.com:19302' // Replace with your STUN server URL
+          },
+        ]
+      }
     };
   }, []);
 
