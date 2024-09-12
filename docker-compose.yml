@@ -6,24 +6,24 @@ services:
     ports:
       - '7880:7880' # HTTP port
       - '7881:7881' # WebSocket port
-      - '5000-5200:5000-5200/udp' # UDP ports for media
+      # - '5000-5200:5000-5200/udp' # UDP ports for media
     command: ['--config=/livekit.yaml', '--bind', '0.0.0.0']
-    depends_on:
-      - turnserver
+    # depends_on:
+    #   - turnserver
 
-  turnserver:
-    image: instrumentisto/coturn:latest
-    ports:
-      - '3478:3478' # STUN/TURN port
-      - '3478:3478/udp' # STUN/TURN port UDP
-      # - '5349:5349' # TURN port TLS
-      # - "5000-5200:5000-5200/udp" # TURN relay UDP ports
-    volumes:
-      - ./turn/turnserver.conf:/etc/coturn/turnserver.conf
-    # - ./certificates/turn_server_cert.pem:/etc/coturn/turn_server_cert.pem
-    # - ./certificates/turn_server_pkey.pem:/etc/coturn/turn_server_pkey.pem
-    environment:
-      - TURN_SECRET=secret
+  # turnserver:
+  #   image: instrumentisto/coturn:latest
+  #   ports:
+  #     - '3478:3478' # STUN/TURN port
+  #     - '3478:3478/udp' # STUN/TURN port UDP
+  #     # - '5349:5349' # TURN port TLS
+  #     # - "5000-5200:5000-5200/udp" # TURN relay UDP ports
+  #   volumes:
+  #     - ./turn/turnserver.conf:/etc/coturn/turnserver.conf
+  #   # - ./certificates/turn_server_cert.pem:/etc/coturn/turn_server_cert.pem
+  #   # - ./certificates/turn_server_pkey.pem:/etc/coturn/turn_server_pkey.pem
+  #   environment:
+  #     - TURN_SECRET=secret
 
   nextjs-app:
     build:
