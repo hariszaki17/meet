@@ -1,17 +1,17 @@
 version: '3.8'
 
 services:
-  livekit-server:
-    # image: hariszaki17/livekit:server-latest
-    image: livekit/livekit-server:latest
-    ports:
-      - '7880:7880' # HTTP port
-      - '7881:7881' # WebSocket port
-      # - '5000-5200:5000-5200/udp' # UDP ports for media
-    # command: ['--config=/livekit.yaml', '--bind', '0.0.0.0']
-    command: ['--dev', '--bind', '0.0.0.0']
-    # depends_on:
-    #   - turnserver
+  # livekit-server:
+  # image: hariszaki17/livekit:server-latest
+  # image: livekit/livekit-server:latest
+  # ports:
+  #   - '7880:7880' # HTTP port
+  #   - '7881:7881' # WebSocket port
+  # - '5000-5200:5000-5200/udp' # UDP ports for media
+  # command: ['--config=/livekit.yaml', '--bind', '0.0.0.0']
+  # command: ['--dev', '--bind', '0.0.0.0']
+  # depends_on:
+  #   - turnserver
 
   # turnserver:
   #   image: instrumentisto/coturn:latest
